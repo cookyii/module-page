@@ -6,31 +6,25 @@
 
 namespace cookyii\modules\Page\backend\controllers;
 
-use cookyii\modules\Account;
+use cookyii\modules\Page;
 
 /**
  * Class ListController
  * @package cookyii\modules\Page\backend\controllers
  */
-class ListController extends Account\backend\components\Controller
+class ListController extends Page\backend\components\Controller
 {
 
     /**
      * @inheritdoc
      */
-    public function behaviors()
+    protected function accessRules()
     {
         return [
-            'access' => [
-                'class' => \yii\filters\AccessControl::className(),
-                'rules' => [
-                    [
-                        'allow' => true,
-                        'actions' => ['index'],
-                        'roles' => [\backend\Permissions::PAGE_ACCESS],
-                    ],
-
-                ],
+            [
+                'allow' => true,
+                'actions' => ['index'],
+                'roles' => [Page\backend\Permissions::PAGE_ACCESS],
             ],
         ];
     }
