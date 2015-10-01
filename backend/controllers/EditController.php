@@ -35,8 +35,12 @@ class EditController extends Page\backend\components\Controller
      */
     public function actionIndex()
     {
-        $PageEditForm = new Page\backend\forms\PageEditForm([
-            'Page' => new \cookyii\modules\Page\resources\Page(),
+        /** @var \cookyii\modules\Page\resources\Page $PageModel */
+        $PageModel = \Yii::createObject(\cookyii\modules\Page\resources\Page::className());
+
+        $PageEditForm = \Yii::createObject([
+            'class' => Page\backend\forms\PageEditForm::className(),
+            'Page' => $PageModel,
         ]);
 
         return $this->render('index', [
