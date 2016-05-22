@@ -7,7 +7,7 @@ angular.module('BackendApp')
     redactorOptions.imageUpload = '/page/rest/upload/image';
   })
 
-  .controller('PageEditController', [
+  .controller('page.EditController', [
     '$scope', '$http', '$timeout', 'QueryScope', 'TabScope', 'ToastrScope',
     function ($scope, $http, $timeout, QueryScope, TabScope, ToastrScope) {
 

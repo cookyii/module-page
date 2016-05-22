@@ -2,8 +2,8 @@
 
 angular.module('BackendApp')
 
-  .controller('PageDetailController', [
-    '$scope', '$timeout', 'QueryScope', 'PageResource',
+  .controller('page.DetailController', [
+    '$scope', '$timeout', 'QueryScope', 'page.PageResource',
     function ($scope, $timeout, QueryScope, Page) {
 
       var hash = null,

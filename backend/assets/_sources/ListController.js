@@ -2,11 +2,11 @@
 
 angular.module('BackendApp')
 
-  .controller('PageListController', [
-    '$scope', '$timeout', 'PageListScope',
-    function ($scope, $timeout, PageListScope) {
+  .controller('page.ListController', [
+    '$scope', '$timeout', 'page.list.ListScope',
+    function ($scope, $timeout, ListScope) {
 
-      $scope.pages = PageListScope($scope);
+      $scope.pages = ListScope($scope);
 
       function _refresh() {
         $scope.pages.reload(false);

@@ -2,7 +2,7 @@
 
 angular.module('BackendApp')
 
-  .service('FilterScope', [
+  .factory('page.list.FilterScope', [
     'QueryScope', 'FilterSearchScope',
     function (QueryScope, FilterSearchScope) {
       return function ($parentScope) {

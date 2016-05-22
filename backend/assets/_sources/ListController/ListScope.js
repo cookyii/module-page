@@ -2,8 +2,8 @@
 
 angular.module('BackendApp')
 
-  .factory('PageListScope', [
-    '$timeout', 'ToastrScope', 'QueryScope', 'SortScope', 'FilterScope', 'PageResource',
+  .factory('page.list.ListScope', [
+    '$timeout', 'ToastrScope', 'QueryScope', 'SortScope', 'page.list.FilterScope', 'page.PageResource',
     function ($timeout, ToastrScope, QueryScope, SortScope, FilterScope, Page) {
       return function ($parentScope) {
 
