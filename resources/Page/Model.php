@@ -1,18 +1,18 @@
 <?php
 /**
- * Page.php
+ * Model.php
  * @author Revin Roman
  * @link https://rmrevin.com
  */
 
-namespace cookyii\modules\Page\resources;
+namespace cookyii\modules\Page\resources\Page;
 
 use cookyii\helpers\ApiAttribute;
 use yii\helpers\Json;
 
 /**
- * Class Page
- * @package cookyii\modules\Page\resources
+ * Class Model
+ * @package cookyii\modules\Page\resources\Page
  *
  * @property integer $id
  * @property string $slug
@@ -26,11 +26,13 @@ use yii\helpers\Json;
  * @property integer $deleted_at
  * @property integer $activated_at
  */
-class Page extends \cookyii\db\ActiveRecord
+class Model extends \cookyii\db\ActiveRecord
 {
 
     use \cookyii\db\traits\ActivationTrait,
         \cookyii\db\traits\SoftDeleteTrait;
+
+    static $tableName = '{{%page}}';
 
     /**
      * @inheritdoc
@@ -68,7 +70,7 @@ class Page extends \cookyii\db\ActiveRecord
     {
         $fields = parent::extraFields();
 
-        $fields['meta'] = function (Page $Model) {
+        $fields['meta'] = function (self $Model) {
             return $Model->meta();
         };
 
@@ -111,21 +113,10 @@ class Page extends \cookyii\db\ActiveRecord
     }
 
     /**
-     * @return \cookyii\modules\Page\resources\queries\PageQuery
+     * @return Query
      */
     public static function find()
     {
-        return \Yii::createObject(
-            \cookyii\modules\Page\resources\queries\PageQuery::className(),
-            [get_called_class()]
-        );
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public static function tableName()
-    {
-        return '{{%page}}';
+        return \Yii::createObject(Query::class, [get_called_class()]);
     }
 }

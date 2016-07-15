@@ -1,20 +1,20 @@
 <?php
 /**
- * PageQuery.php
+ * Query.php
  * @author Revin Roman
  * @link https://rmrevin.com
  */
 
-namespace cookyii\modules\Page\resources\queries;
+namespace cookyii\modules\Page\resources\Page;
 
 /**
- * Class PageQuery
- * @package cookyii\modules\Page\resources\queries
+ * Class Query
+ * @package cookyii\modules\Page\resources\Page
  *
- * @method \cookyii\modules\Page\resources\Page|array|null one($db = null)
- * @method \cookyii\modules\Page\resources\Page[]|array all($db = null)
+ * @method Model|array|null one($db = null)
+ * @method Model[]|array all($db = null)
  */
-class PageQuery extends \yii\db\ActiveQuery
+class Query extends \yii\db\ActiveQuery
 {
 
     use \cookyii\db\traits\query\ActivatedQueryTrait,

@@ -5,19 +5,19 @@
  * @link https://rmrevin.com
  */
 
-namespace cookyii\modules\Page\backend;
+namespace cookyii\modules\Page\frontend;
 
 use cookyii\interfaces\PermissionsModuleDictInterface;
 use rmrevin\yii\rbac\RbacFactory;
 
 /**
  * Class Permissions
- * @package cookyii\modules\Page\backend
+ * @package cookyii\modules\Page\frontend
  */
 class Permissions implements PermissionsModuleDictInterface
 {
 
-    const ACCESS = 'backend.page.access';
+    const ACCESS = 'frontend.page.access';
 
     /**
      * @return array
@@ -25,7 +25,7 @@ class Permissions implements PermissionsModuleDictInterface
     public static function get()
     {
         return [
-            RbacFactory::Permission(static::ACCESS, 'It has access to page backend module'),
+            RbacFactory::Permission(static::ACCESS, 'It has access to page frontend module'),
         ];
     }
 
